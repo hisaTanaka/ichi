@@ -1,0 +1,76 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+新機能と改善のために最新の PowerShell をインストールしてください!https://aka.ms/PSWindows
+
+PS C:\Users\hikku> git --version
+git version 2.49.0.windows.1
+PS C:\Users\hikku> mkdir github_test
+
+
+    ディレクトリ: C:\Users\hikku
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----     2025/12/15 月     15:20                github_test
+
+
+PS C:\Users\hikku> cd github_test
+PS C:\Users\hikku\github_test> git init
+Initialized empty Git repository in C:/Users/hikku/github_test/.git/
+PS C:\Users\hikku\github_test> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        helloworld.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\hikku\github_test> git add helloworld.txt
+PS C:\Users\hikku\github_test> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   helloworld.txt
+
+PS C:\Users\hikku\github_test> git commit -m "add new file"
+[master (root-commit) f0585b5] add new file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 helloworld.txt
+PS C:\Users\hikku\github_test> git remote add origin https://github.com/hisaTanaka/test.git
+PS C:\Users\hikku\github_test> git push origin master
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 238 bytes | 238.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/hisaTanaka/test.git
+ * [new branch]      master -> master
+PS C:\Users\hikku\github_test> git branch branch_test
+PS C:\Users\hikku\github_test> git branch
+  branch_test
+* master
+PS C:\Users\hikku\github_test> git checkout branch_test
+Switched to branch 'branch_test'
+PS C:\Users\hikku\github_test> git add helloworld.txt
+PS C:\Users\hikku\github_test> git commit -m "update helloworld.txt"
+[branch_test 08183da] update helloworld.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\hikku\github_test> git push origin branch_test
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 270 bytes | 270.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'branch_test' on GitHub by visiting:
+remote:      https://github.com/hisaTanaka/test/pull/new/branch_test
+remote:
+To https://github.com/hisaTanaka/test.git
+ * [new branch]      branch_test -> branch_test
+PS C:\Users\hikku\github_test>
